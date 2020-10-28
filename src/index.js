@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
-
-const DATA = [
-  { id: "todo-0", name: "Eat", completed: false },
-  { id: "todo-1", name: "Sleep", completed: false },
-  { id: "todo-2", name: "Repeat", completed: false }
-]; 
+import AppProvider from './AppProvider';
 
 ReactDOM.render(
-  <App tasks = {DATA}/>,
+  <BrowserRouter>
+    <AppProvider>
+      <App/>
+    </AppProvider>
+  </BrowserRouter>
+  ,
   document.getElementById('root')
 );
 
